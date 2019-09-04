@@ -7,7 +7,7 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   @Input() customer: string;
-  
+  @Input() count: number;
   constructor() { }
 
   ngOnInit() {

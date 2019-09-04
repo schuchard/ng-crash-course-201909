@@ -1,4 +1,8 @@
 <h1>App Component</h1>
 <app-header></app-header>
 <app-footer></app-footer>
-<app-dashboard [customer]="dashboardCustomer"></app-dashboard>
+<app-dashboard
+  [customer]="dashboardCustomer"
+  [count]="counter.asObservable() | async"
+></app-dashboard>
+<button (click)="addCount($event)">Add Count</button>
