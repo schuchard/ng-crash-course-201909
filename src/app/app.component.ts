@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'blastoff';
   dashboardCustomer = 'Angular';
   counter = new BehaviorSubject(0);
+  customerName = 'No name';
 
   constructor() {
     // this.counter.unsubscribe()
@@ -19,5 +20,10 @@ export class AppComponent {
   addCount() {
     this.countState++;
     this.counter.next(this.countState);
+  }
+
+  handleAlert(event) {
+    this.customerName = event;
+    console.log(event);
   }
 }
