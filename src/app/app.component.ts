@@ -11,7 +11,7 @@ export class AppComponent {
   title = 'blastoff';
   dashboardCustomer = 'Angular';
   counter = new BehaviorSubject(0);
-  customerName = 'No name';
+  customerName = {name: 'no name'};
 
   constructor() {
     // this.counter.unsubscribe()
