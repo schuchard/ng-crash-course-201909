@@ -1,0 +1,13 @@
+<p>reactive-form works!</p>
+
+<form [formGroup]="loginForm">
+  <span>username:</span>
+  <input type="text" formControlName="username" />
+
+  <br />
+
+  <span>password:</span>
+  <input type="text" formControlName="password" />
+
+  <div [style.color]="'red'" *ngIf="errorMessage">{{ errorMessage }}</div>
+</form>
