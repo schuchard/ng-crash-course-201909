@@ -10,6 +10,8 @@
   </div>
 </div>
 
+<button (click)="userService.addUser()">add user</button>
+users$: {{ userService.users$ | async }}
 <app-my-name-form (submitName)="handleSubmitName($event)"></app-my-name-form>
 value: {{ myNameFormValue }}
 

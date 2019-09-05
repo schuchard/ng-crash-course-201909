@@ -11,6 +11,7 @@ export class ServiceExampleComponent implements OnInit {
   userForm = this.fb.group({
     user: [''],
   });
+  users$ = this.userService.users$;
 
   @Output() username = new EventEmitter<string>();
 

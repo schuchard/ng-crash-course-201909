@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
+import { UserService } from './core/user-service/user-service.service';
 
 @Component({
   selector: 'app-root',
@@ -17,7 +18,7 @@ export class AppComponent {
 
   routes = ['/home', '/admin', '/service-example'];
 
-  constructor() {
+  constructor(public userService: UserService) {
     // this.counter.unsubscribe()
   }
 
