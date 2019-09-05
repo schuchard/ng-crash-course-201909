@@ -1,4 +1,7 @@
 <h1>App Component</h1>
+<app-my-name-form (submitName)="handleSubmitName($event)"></app-my-name-form>
+value: {{myNameFormValue}}
+<br>
 <app-customer (alert)="handleAlert($event)"></app-customer>
 customer name: {{customerName.name}}
 <br>

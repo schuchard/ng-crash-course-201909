@@ -11,7 +11,8 @@ export class AppComponent {
   title = 'blastoff';
   dashboardCustomer = 'Angular';
   counter = new BehaviorSubject(0);
-  customerName = {name: 'no name'};
+  customerName = { name: 'no name' };
+  myNameFormValue = '';
 
   constructor() {
     // this.counter.unsubscribe()
@@ -25,5 +26,9 @@ export class AppComponent {
   handleAlert(event) {
     this.customerName = event;
     console.log(event);
+  }
+
+  handleSubmitName(value) {
+    this.myNameFormValue = value;
   }
 }
