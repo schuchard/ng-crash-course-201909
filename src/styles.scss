@@ -1,2 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 // p { color: yellow}
+
+a {
+  text-decoration: unset;
+}
+.router-link-active {
+  color: blue;
+}

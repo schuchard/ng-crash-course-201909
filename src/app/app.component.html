@@ -1,12 +1,13 @@
 <div class="container">
-  <h1>App Component</h1>
   <div class="links">
     <a *ngFor="let route of routes" [routerLink]="route" routerLinkActive="router-link-active">
       {{ route }}
     </a>
   </div>
 
-  <router-outlet></router-outlet>
+  <div class="outlet">
+    <router-outlet></router-outlet>
+  </div>
 </div>
 
 <app-my-name-form (submitName)="handleSubmitName($event)"></app-my-name-form>
