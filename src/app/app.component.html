@@ -1,22 +1,16 @@
 <h1>App Component</h1>
+<button routerLink="/admin" routerLinkActive="router-link-active">Admin</button>
+<button routerLink="/home" routerLinkActive="router-link-active">Home</button>
 
-<app-admin-summary></app-admin-summary>
----
-<br>
-
-
-
-
----
-<app-reactive-form></app-reactive-form>
-<br>
+<router-outlet></router-outlet>
+<br />
 ---
 <app-my-name-form (submitName)="handleSubmitName($event)"></app-my-name-form>
-value: {{myNameFormValue}}
-<br>
+value: {{ myNameFormValue }}
+<br />
 <app-customer (alert)="handleAlert($event)"></app-customer>
-customer name: {{customerName.name}}
-<br>
+customer name: {{ customerName.name }}
+<br />
 ---
 <app-header></app-header>
 <app-footer></app-footer>
@@ -24,4 +18,4 @@ customer name: {{customerName.name}}
   [customer]="dashboardCustomer"
   [count]="counter.asObservable() | async"
 ></app-dashboard>
-<button (click)="addCount($event)">Add Count</button>
+<button (click)="addCount()">Add Count</button>

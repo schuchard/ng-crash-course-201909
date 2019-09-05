@@ -11,8 +11,18 @@ import { CustomerComponent } from './customer/customer.component';
 import { SharedModule } from './shared/shared.module';
 import { MyNameFormComponent } from './my-name-form/my-name-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { AdminModule } from './+admin/admin.module';
+import { RouterModule, Routes } from '@angular/router';
 
+const routes: Routes = [
+  {
+    path: 'admin',
+    loadChildren: () => import('./+admin/admin.module').then((mod) => mod.AdminModule),
+  },
+  {
+    path: 'home',
+    component: ReactiveFormComponent
+  }
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,9 +39,9 @@ import { AdminModule } from './+admin/admin.module';
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    AdminModule
+    RouterModule.forRoot(routes),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
