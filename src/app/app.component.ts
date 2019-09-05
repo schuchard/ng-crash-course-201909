@@ -13,6 +13,7 @@ export class AppComponent {
   counter = new BehaviorSubject(0);
   customerName = { name: 'no name' };
   myNameFormValue = '';
+  username;
 
   routes = ['/home', '/admin', '/service-example'];
 
@@ -32,5 +33,9 @@ export class AppComponent {
 
   handleSubmitName(value) {
     this.myNameFormValue = value;
+  }
+
+  handleUsername(name) {
+    this.username = name;
   }
 }
