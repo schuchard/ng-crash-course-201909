@@ -1,6 +1,7 @@
 <h1>App Component</h1>
-<button routerLink="/admin" routerLinkActive="router-link-active">Admin</button>
-<button routerLink="/home" routerLinkActive="router-link-active">Home</button>
+<button *ngFor="let route of routes" [routerLink]="route" routerLinkActive="router-link-active">
+  {{ route }}
+</button>
 
 <router-outlet></router-outlet>
 <br />

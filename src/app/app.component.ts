@@ -14,6 +14,8 @@ export class AppComponent {
   customerName = { name: 'no name' };
   myNameFormValue = '';
 
+  routes = ['/home', '/admin', '/service-example'];
+
   constructor() {
     // this.counter.unsubscribe()
   }

@@ -12,6 +12,7 @@ import { SharedModule } from './shared/shared.module';
 import { MyNameFormComponent } from './my-name-form/my-name-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { RouterModule, Routes } from '@angular/router';
+import { ServiceExampleComponent } from './service-example/service-example.component';
 
 const routes: Routes = [
   {
@@ -21,6 +22,15 @@ const routes: Routes = [
   {
     path: 'home',
     component: ReactiveFormComponent
+  },
+  {
+    path: 'service-example',
+    component: ServiceExampleComponent
+  },
+  {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'home',
   }
 ];
 @NgModule({
@@ -32,6 +42,7 @@ const routes: Routes = [
     CustomerComponent,
     MyNameFormComponent,
     ReactiveFormComponent,
+    ServiceExampleComponent,
   ],
   imports: [
     BrowserModule,
