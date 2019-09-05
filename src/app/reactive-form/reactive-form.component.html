@@ -10,6 +10,4 @@
   <input type="text" formControlName="password" />
 
   <div [style.color]="'red'" *ngIf="errorMessage | async as err">{{ err }}</div>
-
-  {{ users$ | async }}
 </form>
