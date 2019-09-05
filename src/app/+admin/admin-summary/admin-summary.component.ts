@@ -8,7 +8,6 @@ import { UserService } from 'src/app/core/user-service/user-service.service';
 })
 export class AdminSummaryComponent implements OnInit {
   name = this.userService.getName('Kevin');
-  users = this.userService.users$;
 
   constructor(private userService: UserService) {}
 

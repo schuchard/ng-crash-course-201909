@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
-import { UserService } from './core/user-service/user-service.service';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +14,7 @@ export class AppComponent {
   customerName = { name: 'no name' };
   myNameFormValue = '';
 
-  constructor(public userService: UserService) {
+  constructor() {
     // this.counter.unsubscribe()
   }
 
