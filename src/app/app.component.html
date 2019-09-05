@@ -1,20 +1,32 @@
-<h1>App Component</h1>
-<button *ngFor="let route of routes" [routerLink]="route" routerLinkActive="router-link-active">
-  {{ route }}
-</button>
+<div class="container">
+  <h1>App Component</h1>
+  <div class="links">
+    <a *ngFor="let route of routes" [routerLink]="route" routerLinkActive="router-link-active">
+      {{ route }}
+    </a>
+  </div>
 
-<router-outlet></router-outlet>
-<br />
----
+  <router-outlet></router-outlet>
+</div>
+
 <app-my-name-form (submitName)="handleSubmitName($event)"></app-my-name-form>
 value: {{ myNameFormValue }}
+
 <br />
+<br />
+------------------------------
 <app-customer (alert)="handleAlert($event)"></app-customer>
 customer name: {{ customerName.name }}
+
 <br />
----
+<br />
+------------------------------
 <app-header></app-header>
 <app-footer></app-footer>
+
+<br />
+<br />
+------------------------------
 <app-dashboard
   [customer]="dashboardCustomer"
   [count]="counter.asObservable() | async"

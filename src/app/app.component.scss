@@ -1,0 +1,16 @@
+.container {
+  padding: 10px;
+  padding-bottom: 50px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-bottom: 1px solid gray;
+}
+
+.links {
+  display: flex;
+  a {
+    margin-right: 10px;
+  }
+}
