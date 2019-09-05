@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { AlertDirective } from './alert/alert.directive';
+import { UserComponent } from './user/user.component';
 
-const comp = [AlertDirective];
+const comp = [AlertDirective, UserComponent];
 
 @NgModule({
   imports: [],
-  exports: [comp],
   declarations: [comp],
+  exports: [comp],
   providers: [],
 })
-export class SharedModule { }
-
+export class SharedModule {}

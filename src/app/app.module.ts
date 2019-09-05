@@ -11,6 +11,7 @@ import { CustomerComponent } from './customer/customer.component';
 import { SharedModule } from './shared/shared.module';
 import { MyNameFormComponent } from './my-name-form/my-name-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
+import { AdminModule } from './+admin/admin.module';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
     AppRoutingModule,
     SharedModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AdminModule
   ],
   providers: [],
   bootstrap: [AppComponent]
