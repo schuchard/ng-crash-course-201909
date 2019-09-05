@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { combineLatest } from 'rxjs/operators';
+import { combineLatest, map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-reactive-form',
@@ -8,7 +8,7 @@ import { combineLatest } from 'rxjs/operators';
   styleUrls: ['./reactive-form.component.scss'],
 })
 export class ReactiveFormComponent implements OnInit {
-  errorMessage = '';
+  errorMessage;
   loginForm = this.fb.group({
     username: ['', Validators.required],
     password: ['', Validators.required],
@@ -17,13 +17,13 @@ export class ReactiveFormComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.username.valueChanges
+    this.errorMessage = this.username.valueChanges
+      .pipe(combineLatest(this.password.valueChanges))
       .pipe(
-        combineLatest(this.password.valueChanges, (username, password) => {
-          this.errorMessage = username === password ? 'username cant match password' : '';
+        map(([username, password]) => {
+          return username === password ? 'username cant match password' : '';
         })
-      )
-      .subscribe();
+      );
   }
 
   get username() {

@@ -9,5 +9,5 @@
   <span>password:</span>
   <input type="text" formControlName="password" />
 
-  <div [style.color]="'red'" *ngIf="errorMessage">{{ errorMessage }}</div>
+  <div [style.color]="'red'" *ngIf="errorMessage | async as err">{{ err }}</div>
 </form>
