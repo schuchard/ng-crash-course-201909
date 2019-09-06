@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
 import { RestServiceService as RestService } from '../core/rest-service/rest-service.service';
+import { timer } from 'rxjs';
 
 interface Todos {
   userId: number;
@@ -18,6 +19,8 @@ interface Todos {
 export class DashboardComponent implements OnInit {
   @Input() customer: string;
   @Input() count: number;
+
+  time$ = timer(0, 1000).pipe(map(() => new Date()));
 
   todos$ = this.restService
     .get<Todos[]>('https://jsonplaceholder.typicode.com/todos')

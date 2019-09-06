@@ -1,4 +1,7 @@
 <p appAlert>dashboard works!</p>
-{{customer}} - {{count}}
+{{ customer }} - {{ count }}
+<br />
+
+{{ time$ | async | date: (count % 2 ? 'mediumTime' : 'shortTime') }}
 
 <app-todos [todos]="todos$ | async"></app-todos>
