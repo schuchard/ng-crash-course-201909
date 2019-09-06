@@ -1,5 +1,6 @@
 <div class="container center">
   <div class="links">
+    <a [routerLink]="[{ outlets: { float: ['config'] } }]">config</a>
     <a *ngFor="let route of routes" [routerLink]="route" routerLinkActive="router-link-active">
       {{ route }}
     </a>
@@ -7,6 +8,10 @@
 
   <div class="outlet">
     <router-outlet></router-outlet>
+  </div>
+
+  <div class="outlet">
+    <router-outlet name="float"></router-outlet>
   </div>
 </div>
 

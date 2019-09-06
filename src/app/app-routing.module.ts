@@ -2,9 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ServiceExampleComponent } from './service-example/service-example.component';
-import { TodosContainerComponent } from './todos-container/todos-container.component';
-import { TodoSummaryComponent } from './todos-container/todo-summary/todo-summary.component';
-import { TodoDetailComponent } from './todos-container/todo-detail/todo-detail.component';
+import { ConfigComponent } from './shared/config/config.component';
 
 const routes: Routes = [
   {
@@ -22,6 +20,11 @@ const routes: Routes = [
   {
     path: 'todos',
     loadChildren: () => import('./todos-container/todos.module').then((mod) => mod.TodosModule),
+  },
+  {
+    path: 'config',
+    component: ConfigComponent,
+    outlet: 'float'
   },
   {
     path: '',
