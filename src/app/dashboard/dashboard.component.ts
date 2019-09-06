@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map } from 'rxjs/operators';
-import { RestServiceService as RestService } from '../core/rest-service/rest-service.service';
+import { RestService as RestService } from '../core/rest-service/rest-service.service';
 import { timer } from 'rxjs';
 
 interface Todos {

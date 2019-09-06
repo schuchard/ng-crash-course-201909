@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { combineLatest, map } from 'rxjs/operators';
-import { lengthAsyncValidator } from './validators';
+import { CustomValidators } from './validators';
 
 @Component({
   selector: 'app-reactive-form',
@@ -11,8 +11,8 @@ import { lengthAsyncValidator } from './validators';
 export class ReactiveFormComponent implements OnInit {
   errorMessage;
   loginForm = this.fb.group({
-    username: ['', Validators.required, [lengthAsyncValidator(2)]],
-    password: ['', Validators.required, [lengthAsyncValidator(3)]],
+    username: ['', Validators.required, [CustomValidators.lengthAsyncValidator(2)]],
+    password: ['', Validators.required, [CustomValidators.lengthAsyncValidator(3)]],
   });
 
   constructor(private fb: FormBuilder) {}

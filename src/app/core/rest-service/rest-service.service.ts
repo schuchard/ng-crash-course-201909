@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class RestServiceService {
+export class RestService {
   constructor(private http: HttpClient) {}
 
   get<T>(url: string): Observable<T> {
