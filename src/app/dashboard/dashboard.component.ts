@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { RestService as RestService } from '../core/rest-service/rest-service.service';
 import { timer } from 'rxjs';
 
-export interface ITodos {
+export interface ITodo {
   userId: number;
   id: number;
   title: string;
@@ -23,7 +23,7 @@ export class DashboardComponent implements OnInit {
   time$ = timer(0, 1000).pipe(map(() => new Date()));
 
   todos$ = this.restService
-    .get<ITodos[]>('https://jsonplaceholder.typicode.com/todos')
+    .get<ITodo[]>('https://jsonplaceholder.typicode.com/todos')
     .pipe(map((t) => t.slice(0, 10)));
 
   constructor(private restService: RestService) {}

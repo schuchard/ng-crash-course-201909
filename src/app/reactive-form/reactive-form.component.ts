@@ -4,7 +4,7 @@ import { map } from 'rxjs/operators';
 import { CustomValidators, httpAsyncValidator } from './validators';
 import { combineLatest } from 'rxjs';
 import { RestService } from '../core/rest-service/rest-service.service';
-import { ITodos } from '../dashboard/dashboard.component';
+import { ITodo } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-reactive-form',
@@ -21,7 +21,7 @@ export class ReactiveFormComponent implements OnInit {
       [
         httpAsyncValidator(
           this.restService
-            .get<ITodos>('https://jsonplaceholder.typicode.com/todos/2')
+            .get<ITodo>('https://jsonplaceholder.typicode.com/todos/2')
             .pipe(map((res) => res && !res.completed)) // return true for errors, not completed is an error;
         ),
       ],

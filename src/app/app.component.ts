@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { UserService } from './core/user-service/user-service.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -16,9 +17,9 @@ export class AppComponent {
   myNameFormValue = '';
   username;
 
-  routes = ['/home', '/admin', '/service-example'];
+  routes = ['/home', '/admin', '/service-example', '/todos'];
 
-  constructor(public userService: UserService) {
+  constructor(public userService: UserService, private router: Router) {
     // this.counter.unsubscribe()
   }
 
@@ -34,6 +35,7 @@ export class AppComponent {
 
   handleSubmitName(value) {
     this.myNameFormValue = value;
+    this.router.navigate(['/home']);
   }
 
   handleUsername(name) {

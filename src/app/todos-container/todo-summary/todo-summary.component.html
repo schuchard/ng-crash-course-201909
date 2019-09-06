@@ -1,0 +1,7 @@
+<p>todo-summary works!</p>
+
+<ul>
+  <li *ngFor="let todo of todos$ | async">
+    <a [routerLink]="todo.id">{{ todo.id }} - {{ todo.title }}</a>
+  </li>
+</ul>
