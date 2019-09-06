@@ -11,6 +11,7 @@
 </div>
 
 <div class="container outlet">
+  <h3>User control</h3>
   <button (click)="userService.addUser()">add user</button>
   users$: {{ userService.users$ | async }}
 </div>
