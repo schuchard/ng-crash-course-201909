@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { combineLatest, map } from 'rxjs/operators';
+import { map } from 'rxjs/operators';
 import { CustomValidators } from './validators';
+import { combineLatest } from 'rxjs';
 
 @Component({
   selector: 'app-reactive-form',
@@ -18,13 +19,11 @@ export class ReactiveFormComponent implements OnInit {
   constructor(private fb: FormBuilder) {}
 
   ngOnInit() {
-    this.errorMessage = this.username.valueChanges
-      .pipe(combineLatest(this.password.valueChanges))
-      .pipe(
-        map(([username, password]) => {
-          return username === password ? 'username cant match password' : '';
-        })
-      );
+    this.errorMessage = combineLatest(this.username.valueChanges, this.password.valueChanges).pipe(
+      map(([username, password]) => {
+        return username === password ? 'username cant match password' : '';
+      })
+    );
   }
 
   get username() {

@@ -12,7 +12,6 @@ import { CustomerComponent } from './customer/customer.component';
 import { SharedModule } from './shared/shared.module';
 import { MyNameFormComponent } from './my-name-form/my-name-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
-import { RouterModule, Routes } from '@angular/router';
 import { ServiceExampleComponent } from './service-example/service-example.component';
 
 @NgModule({

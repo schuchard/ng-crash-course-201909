@@ -1,8 +1,8 @@
-import { FormControl, AsyncValidatorFn } from '@angular/forms';
+import { FormControl, AsyncValidatorFn, AbstractControl } from '@angular/forms';
 
 import { timer } from 'rxjs';
 
-import { map, take } from 'rxjs/operators';
+import { map, take, debounceTime, switchMap } from 'rxjs/operators';
 import { RestService } from '../core/rest-service/rest-service.service';
 export class CustomValidators {
 
