@@ -18,6 +18,7 @@
 }
 
 .outlet {
+  background-color: white;
   margin-top: 20px;
   padding: 10px;
   box-shadow: 0px 0px 8px 9px #0000000d;
@@ -27,4 +28,10 @@
   &:hover {
     box-shadow: 0px 0px 8px 9px #0000001a;
   }
+}
+
+.float {
+  position: absolute;
+  left: 0;
+  top: 30;
 }

@@ -13,6 +13,7 @@ import { SharedModule } from './shared/shared.module';
 import { MyNameFormComponent } from './my-name-form/my-name-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ServiceExampleComponent } from './service-example/service-example.component';
+import { MaterialModule } from './material/material.module';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +31,8 @@ import { ServiceExampleComponent } from './service-example/service-example.compo
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MaterialModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
