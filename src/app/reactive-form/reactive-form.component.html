@@ -10,4 +10,6 @@
   <input type="text" formControlName="password" />
 
   <div [style.color]="'red'" *ngIf="errorMessage | async as err">{{ err }}</div>
+
+  <button [disabled]="loginForm.invalid">Submit</button>
 </form>
