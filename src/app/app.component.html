@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container center">
   <div class="links">
     <a *ngFor="let route of routes" [routerLink]="route" routerLinkActive="router-link-active">
       {{ route }}
@@ -10,28 +10,30 @@
   </div>
 </div>
 
-<button (click)="userService.addUser()">add user</button>
-users$: {{ userService.users$ | async }}
-<app-my-name-form (submitName)="handleSubmitName($event)"></app-my-name-form>
-value: {{ myNameFormValue }}
+<div class="container outlet">
+  <button (click)="userService.addUser()">add user</button>
+  users$: {{ userService.users$ | async }}
+</div>
 
-<br />
-<br />
-------------------------------
-<app-customer (alert)="handleAlert($event)"></app-customer>
-customer name: {{ customerName.name }}
+<div class="container outlet">
+  <app-my-name-form (submitName)="handleSubmitName($event)"></app-my-name-form>
+  value: {{ myNameFormValue }}
+</div>
 
-<br />
-<br />
-------------------------------
-<app-header></app-header>
-<app-footer></app-footer>
+<div class="container outlet">
+  <app-customer (alert)="handleAlert($event)"></app-customer>
+  customer name: {{ customerName.name }}
+</div>
 
-<br />
-<br />
-------------------------------
-<app-dashboard
-  [customer]="dashboardCustomer"
-  [count]="counter.asObservable() | async"
-></app-dashboard>
-<button (click)="addCount()">Add Count</button>
+<div class="container outlet">
+  <app-header></app-header>
+  <app-footer></app-footer>
+</div>
+
+<div class="container outlet">
+  <app-dashboard
+    [customer]="dashboardCustomer"
+    [count]="counter.asObservable() | async"
+  ></app-dashboard>
+  <button (click)="addCount()">Add Count</button>
+</div>
