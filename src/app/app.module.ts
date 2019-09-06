@@ -13,10 +13,6 @@ import { SharedModule } from './shared/shared.module';
 import { MyNameFormComponent } from './my-name-form/my-name-form.component';
 import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 import { ServiceExampleComponent } from './service-example/service-example.component';
-import { TodosContainerComponent } from './todos-container/todos-container.component';
-import { TodoSummaryComponent } from './todos-container/todo-summary/todo-summary.component';
-import { TodoDetailComponent } from './todos-container/todo-detail/todo-detail.component';
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,9 +23,6 @@ import { TodoDetailComponent } from './todos-container/todo-detail/todo-detail.c
     MyNameFormComponent,
     ReactiveFormComponent,
     ServiceExampleComponent,
-    TodosContainerComponent,
-    TodoSummaryComponent,
-    TodoDetailComponent,
   ],
   imports: [
     BrowserModule,

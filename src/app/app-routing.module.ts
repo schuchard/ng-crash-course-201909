@@ -6,7 +6,6 @@ import { TodosContainerComponent } from './todos-container/todos-container.compo
 import { TodoSummaryComponent } from './todos-container/todo-summary/todo-summary.component';
 import { TodoDetailComponent } from './todos-container/todo-detail/todo-detail.component';
 
-
 const routes: Routes = [
   {
     path: 'admin',
@@ -14,35 +13,25 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: ReactiveFormComponent
+    component: ReactiveFormComponent,
   },
   {
     path: 'service-example',
-    component: ServiceExampleComponent
+    component: ServiceExampleComponent,
   },
   {
     path: 'todos',
-    component: TodosContainerComponent,
-    children: [
-      {
-        path: '',
-        component: TodoSummaryComponent
-      },
-      {
-        path: ':id',
-        component: TodoDetailComponent
-      }
-    ]
+    loadChildren: () => import('./todos-container/todos.module').then((mod) => mod.TodosModule),
   },
   {
     path: '',
     pathMatch: 'full',
     redirectTo: 'home',
-  }
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
