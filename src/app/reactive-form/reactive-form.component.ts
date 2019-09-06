@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { map } from 'rxjs/operators';
-import { CustomValidators } from './validators';
+import { CustomValidators, httpAsyncValidator } from './validators';
 import { combineLatest } from 'rxjs';
+import { RestService } from '../core/rest-service/rest-service.service';
+import { ITodos } from '../dashboard/dashboard.component';
 
 @Component({
   selector: 'app-reactive-form',
@@ -13,10 +15,20 @@ export class ReactiveFormComponent implements OnInit {
   errorMessage;
   loginForm = this.fb.group({
     username: ['', Validators.required, [CustomValidators.lengthAsyncValidator(2)]],
-    password: ['', Validators.required, [CustomValidators.lengthAsyncValidator(3)]],
+    password: [
+      '',
+      Validators.required,
+      [
+        httpAsyncValidator(
+          this.restService
+            .get<ITodos>('https://jsonplaceholder.typicode.com/todos/2')
+            .pipe(map((res) => res && !res.completed)) // return true for errors, not completed is an error;
+        ),
+      ],
+    ],
   });
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder, private restService: RestService) {}
 
   ngOnInit() {
     this.errorMessage = combineLatest(this.username.valueChanges, this.password.valueChanges).pipe(

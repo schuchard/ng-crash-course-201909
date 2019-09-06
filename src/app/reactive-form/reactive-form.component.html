@@ -8,8 +8,10 @@
 
   <span>password:</span>
   <input type="text" formControlName="password" />
+  {{loginForm.pending}}
 
   <div [style.color]="'red'" *ngIf="errorMessage | async as err">{{ err }}</div>
 
-  <button [disabled]="loginForm.invalid">Submit</button>
+  <button [disabled]="loginForm.invalid || loginForm.pending">Submit</button>
+
 </form>
