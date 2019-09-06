@@ -6,7 +6,7 @@ import { map } from 'rxjs/operators';
   providedIn: 'root',
 })
 export class UserService {
-  userList = ['bob', 'alice', 'john'];
+  userList = ['alice', 'bob', 'eve'];
   private users = new BehaviorSubject<string[]>([]);
 
   constructor() {
