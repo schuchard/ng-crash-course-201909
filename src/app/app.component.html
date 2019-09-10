@@ -1,3 +1,7 @@
+<div class="float drag" cdkDrag>
+  <router-outlet name="float"></router-outlet>
+</div>
+
 <div class="container center">
   <div class="links">
     <a [routerLink]="[{ outlets: { float: ['config'] } }]">config</a>
@@ -9,10 +13,6 @@
   <div class="outlet">
     <router-outlet></router-outlet>
   </div>
-</div>
-
-<div class="outlet float" cdkDrag>
-  <router-outlet name="float"></router-outlet>
 </div>
 
 <div class="container outlet">
